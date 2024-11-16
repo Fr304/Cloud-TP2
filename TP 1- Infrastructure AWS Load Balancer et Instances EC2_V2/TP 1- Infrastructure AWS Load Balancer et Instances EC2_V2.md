@@ -146,7 +146,7 @@ Une fois la clé saisie, veuillez-vous rendre dans la partie **Session** puis cl
 
 Une fois connecté sur l’instance, j’ai exécuté les commandes renseigner dans le TP pour installer Apache HTTP Server :   
 
-sudo yum update -y  ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.024.png)
+sudo yum update -y
 
 sudo yum install-y httpd  sudo systemctl start httpd sudo systemctl enable httpd
 

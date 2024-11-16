@@ -163,7 +163,7 @@ TOKEN=$(curl-X PUT[ "http://169.254.169.254/latest/api/token" ](http://169.254.1
 
 curl-H  "X-aws-ec2-metadata-token:  $TOKEN" ht[tp://169.254.169.254/latest/meta - data/instance-id > ](http://169.254.169.254/latest/meta-data/instance-id)
 
-/var/www/html/index.html``` 
+/var/www/html/index.html``
 
 Pour rendre le script exécutable j’ai utilisé cette commande renseigner dans le TP : **sudo chmod +x /var/www/html/metadata.sh**
 

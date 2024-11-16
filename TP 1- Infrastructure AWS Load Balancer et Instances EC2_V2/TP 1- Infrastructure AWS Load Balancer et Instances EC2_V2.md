@@ -274,7 +274,8 @@ Ensuite, veuillez renseigner les informations demandées.
 
 Pour vérifier si je suis bien connecté, j’ai lancé cette commande :  
 
-```aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance1"  -- query "Reservations[\*].Instances[\*].InstanceId" --output text 
+```bash
+aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance1"  -- query "Reservations[\*].Instances[\*].InstanceId" --output text 
 ```
 Note : Cette commande permet de lister l'**ID** de l'instance EC2 qui a le tag **Name** avec la valeur **FAD\_Instance1**, en affichant uniquement l'ID dans un format simple (texte).
 

@@ -305,8 +305,9 @@ Dans mon cas, j’ai nommé mon instance **FAD\_Instance3**
 
 Pour vérifier le statut de mon instance et obtenir son adresse ip voici la commande  que j’ai saisie :  
 
-aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance3"  -- query![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.043.png)  "Reservations[\*].Instances[\*].[InstanceId,State.Name,PublicIpAddress]"  -- output table 
-
+```bash
+aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance3"  -- query "Reservations[\*].Instances[\*].[InstanceId,State.Name,PublicIpAddress]"  -- output table 
+```
 ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.044.jpeg)
 
 Voici mon instance en mode graphique :
@@ -318,37 +319,37 @@ Voici mon instance en mode graphique :
 et du subnet. Il faut aussi avoir  le nom de la clé privée et du type d’instance  que l’on souhaite lancer. 
 
 Commande pour lister les groupes de sécurité : 
-
-aws ec2 describe-security-groups --query "SecurityGroups[\*].[GroupId, GroupName, ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.046.png)VpcId, Description]" --output table 
-
+```bash
+aws ec2 describe-security-groups --query "SecurityGroups[\*].[GroupId, GroupName, VpcId, Description]" --output table 
+```
 Commande pour lister les sous réseaux : ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.047.png)
-
+```bash
 aws ec2 describe-subnets --query "Subnets[\*].[SubnetId, VpcId, AvailabilityZone, CidrBlock]" --output table 
-
+```
 3. Utiliser l’AWS CLI pour ajouter cette instance au Target Group créé dans la partie 1 du TP 
 
    Pour ajouter l’instance  **FAD\_Instance3** dans le Target Group **FAD-TargetGroup,** il faut  obtenir l’arn du Target Group  **FAD-TargetGroup** et l’id de l’instance que je dois ajouter dans ce Target Group. 
 
    Pour obtenir ces informations, voici la commande à utiliser pour obtenir l’ARN du Target Group : 
-
-aws  elbv2  describe-target-groups  --names  "FAD-TargetGroup"  --query ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.048.png)"TargetGroups[0].TargetGroupArn" --output text 
-
+```bash
+aws  elbv2  describe-target-groups  --names  "FAD-TargetGroup"  --query "TargetGroups[0].TargetGroupArn" --output text 
+```
 ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.049.png)
 
 ID du Target Group : arn:aws:elasticloadbalancing:eu-west - 1:149028371915:targetgroup/FAD-TargetGroup/2ddeeff61ac6c81a
 
 Pour avoir l’id de l’instance : ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.050.png)
-
+```bash
 aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance3"  -- query "Reservations[\*].Instances[\*].[InstanceId]" --output text 
-
+```
 ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.051.png)
 
 ID de l’instance : i-09c8782cb8be91f81 
 
 Pour ajouter l’instance **FAD\_Instance3** dans le Target Group **FAD-TargetGroup** voici la commande a utilisé :**  
-
-aws elbv2 register-targets  --target-group-arn arn:aws:elasticloadbalancing:eu-west - ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.052.png)![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.053.png)1:149028371915:targetgroup/FAD-TargetGroup/2ddeeff61ac6c81a  --targets  Id=i - 09c8782cb8be91f81  
-
+```bash
+aws elbv2 register-targets  --target-group-arn arn:aws:elasticloadbalancing:eu-west - 1:149028371915:targetgroup/FAD-TargetGroup/2ddeeff61ac6c81a  --targets  Id=i - 09c8782cb8be91f81  
+```
 Voici le résultat après l’ajout   
 
 ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.054.jpeg)

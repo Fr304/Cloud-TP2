@@ -154,7 +154,7 @@ sudo yum install-y httpd  sudo systemctl start httpd sudo systemctl enable httpd
 
 Pour réaliser cela, comme indiqué dans le TP, j’ai  créé le fichier **metadata.sh** dans le répertoire **/var/www/html/** et y ai inséré ce contenu : 
 
-#!/bin/bash  ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.025.png)
+#!/bin/bash
 
 TOKEN=$(curl-X PUT[ "http://169.254.169.254/latest/api/token" ](http://169.254.169.254/latest/api/token)
 

@@ -18,7 +18,7 @@ Pour commencer, nous allons créer un VPC pour chaque membre du binôme en respe
 
 
 
-|Nom du VPC |VPC CIDR |` `Subnet |Private Subnet |
+|Nom du VPC |VPC CIDR |Subnet |Private Subnet |
 | - | - | - | - |
 |FAD\_VPC1 |10\.1.0.0 /16 |10\.1.1.0 /24 |10\.1.2.0 /24 |
 |LLT\_VPC2 |10\.111.0.0 /16 |10\.111.1.0 /24 |10\.111.2.0 /24 |
@@ -97,9 +97,9 @@ Note : Pour les deux groupes de sécurité, je n’ai pas modifié les règles d
 
 Pour la configuration de SSH sur mon appareil, j’ai installé  **OpenSSH** en suivant les indications présentes sur ce lien :  **[https://www.it-connect.fr/installer-et-configurer - openssh-server-sur-windows-server-2019/** ](https://www.it-connect.fr/installer-et-configurer-openssh-server-sur-windows-server-2019/)**
 
-Une fois **OpenSSH** installé, j’ai créé un dossier **.ssh** et un fichier **config** dans le chemin suivant : C:\Users\Admin 
+Une fois **OpenSSH** installé, j’ai créé un dossier **.ssh** et un fichier **config** dans le chemin suivant : **C:\Users\Admin** 
 
-Pour ce TP, j’en ai aussi profité pour déposer ma clé privée FAD\_KeyPair\_VPC1 dans le répertoire suivant : C:\Users\Admin\.ssh 
+Pour ce TP, j’en ai aussi profité pour déposer ma clé privée **FAD\_KeyPair\_VPC1** dans le répertoire suivant : **C:\Users\Admin\.ssh** 
 
 ![](Aspose.Words.dfd7a4eb-534c-4bf4-850b-f1844b9cfade.016.png)
 
@@ -163,9 +163,7 @@ Mon collègue a reçu la demande et l’a acceptée :
 
 2. Mettre à jour les tables de routage pour que les adresses du CIDR du subnet privé du VPC 1 soit accessible depuis le subnet privé du VPC 2 et inversement 
 
-   Après avoir mis en place la connexion d’appairage, il me reste à renseigner le sous - réseau privé de mon collègue dans ma table de routage privée pour finaliser cette partie 
-
-   de l’appairage. 
+   Après avoir mis en place la connexion d’appairage, il me reste à renseigner le sous - réseau privé de mon collègue dans ma table de routage privée pour finaliser cette partie de l’appairage. 
 
    Pour  ce  faire,  dans  l’interface  **Connexion  d’appairage**,  dans  la  section  **Table  de routage**, j’ai sélectionné cette table **rtb-08122a2f24213cece / FAD\_VPC1-rtb-private1- eu-west-2a**, et j’y ai saisi le sous-réseau privé de mon collègue **10.111.2.0 /24**. 
 
@@ -179,11 +177,7 @@ Ci-dessous, la table de routage privée que j’ai modifiée :
 
 3. Si nécessaire, modifier les groupes de sécurité pour permettre aux instances de communiquer entre elles sur le port 80
 
-   Dans le groupe de sécurité lié à mon instance privée  **FAD\_GroupSecurity\_VPC1**, j’ai autorisé la connexion **HTTP** sur le port **80** pour tout le monde (j’ai laissé l’accès ouvert à 
-
-   tout le monde car je suis dans un réseau privé, donc seul mon collègue, en dehors de 
-
-   moi, pourra établir une connexion HTTP avec mon instance privée).
+   Dans le groupe de sécurité lié à mon instance privée  **FAD\_GroupSecurity\_VPC1**, j’ai autorisé la connexion **HTTP** sur le port **80** pour tout le monde (j’ai laissé l’accès ouvert à tout le monde car je suis dans un réseau privé, donc seul mon collègue, en dehors de moi, pourra établir une connexion HTTP avec mon instance privée).
 
    Dans ce groupe de sécurité **FAD\_GroupSecurity\_VPC1**, j’ai aussi **autorisé** le ping pour que mon collègue puisse confirmer qu’il atteint bien mon instance privée. Cette règle est 
 

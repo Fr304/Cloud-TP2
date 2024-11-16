@@ -322,7 +322,7 @@ Commande pour lister les groupes de sécurité :
 ```bash
 aws ec2 describe-security-groups --query "SecurityGroups[\*].[GroupId, GroupName, VpcId, Description]" --output table 
 ```
-Commande pour lister les sous réseaux : ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.047.png)
+Commande pour lister les sous réseaux :
 ```bash
 aws ec2 describe-subnets --query "Subnets[\*].[SubnetId, VpcId, AvailabilityZone, CidrBlock]" --output table 
 ```
@@ -338,7 +338,7 @@ aws  elbv2  describe-target-groups  --names  "FAD-TargetGroup"  --query "TargetG
 
 ID du Target Group : arn:aws:elasticloadbalancing:eu-west - 1:149028371915:targetgroup/FAD-TargetGroup/2ddeeff61ac6c81a
 
-Pour avoir l’id de l’instance : ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.050.png)
+Pour avoir l’id de l’instance :
 ```bash
 aws  ec2  describe-instances  --filters  "Name=tag:Name,Values=FAD\_Instance3"  -- query "Reservations[\*].Instances[\*].[InstanceId]" --output text 
 ```

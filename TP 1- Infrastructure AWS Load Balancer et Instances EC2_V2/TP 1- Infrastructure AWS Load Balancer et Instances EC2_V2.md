@@ -291,7 +291,9 @@ La commande m’a bien affiché l’id de mon instance  **FAD\_Instance1** donc 
 
 Mon image **FAD\_Instance2** apparait, je vais donc utiliser cette id d’image pour lancer mon instance voici la commande
 
-aws ec2 run-instances --image-id ami-04c6bed27bedb4073 --instance-type t2.micro ![](Aspose.Words.d4cfd996-b808-4673-b3ae-5190f89a34b9.041.png)--key-name FAD-KeyPair --security-group-ids sg-0b3b830f14c501f5c --subnet-id subnet-0655f72c900baddc5 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=FAD\_Instance3}]" --count 1 
+```bash
+aws ec2 run-instances --image-id ami-04c6bed27bedb4073 --instance-type t2.micro --key-name FAD-KeyPair --security-group-ids sg-0b3b830f14c501f5c --subnet-id subnet-0655f72c900baddc5 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=FAD\_Instance3}]" --count 1
+```
 
 Cette commande lance une nouvelle instance EC2 de type **t2.micro** en utilisant l’image AMI spécifiée (**ami-04c6bed27bedb4073**). Elle associe l’instance à la clé **FAD-KeyPair**, au  groupe  de  sécurité  **sg-0b3b830f14c501f5c**,  et  au  sous-réseau  **subnet - 0655f72c900baddc5**. L’instance est étiquetée avec le tag  **Name : FAD\_Instance3**, et une seule instance est lancée.
 

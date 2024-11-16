@@ -104,7 +104,7 @@ Pour ce TP, j’en ai aussi profité pour déposer ma clé privée FAD\_KeyPair\
 ![](Aspose.Words.dfd7a4eb-534c-4bf4-850b-f1844b9cfade.016.png)
 
 Dans le fichier de config, voici la configuration que j’ai faite : 
-
+```bash
 Host bastion
 
 `  `HostName 18.133.245.199 
@@ -120,7 +120,7 @@ Host private-instance
 `  `User ec2-user 
 
 `  `IdentityFile C:/Users/Admin/.ssh/FAD\_KeyPair\_VPC1\_1   ProxyJump bastion 
-
+```
 Sur PowerShell, j’ai saisi la commande suivante : **ssh private-instance** 
 
 Cela m’a permis de me connecter à mon instance privée ayant l’adresse IP **10.1.2.121**. 

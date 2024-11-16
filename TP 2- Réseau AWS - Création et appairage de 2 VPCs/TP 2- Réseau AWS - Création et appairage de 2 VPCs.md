@@ -107,19 +107,19 @@ Dans le fichier de config, voici la configuration que j’ai faite :
 ```bash
 Host bastion
 
-`  `HostName 18.133.245.199 
+   HostName 18.133.245.199 
 
-`  `User ec2-user 
+   User ec2-user 
 
-`  `IdentityFile C:/Users/Admin/.ssh/FAD\_KeyPair\_VPC1\_1 
+   IdentityFile C:/Users/Admin/.ssh/FAD\_KeyPair\_VPC1\_1 
 
 Host private-instance 
 
-`  `HostName 10.1.2.121 
+   HostName 10.1.2.121 
 
-`  `User ec2-user 
+   User ec2-user 
 
-`  `IdentityFile C:/Users/Admin/.ssh/FAD\_KeyPair\_VPC1\_1   ProxyJump bastion 
+   IdentityFile C:/Users/Admin/.ssh/FAD\_KeyPair\_VPC1\_1   ProxyJump bastion 
 ```
 Sur PowerShell, j’ai saisi la commande suivante : **ssh private-instance** 
 

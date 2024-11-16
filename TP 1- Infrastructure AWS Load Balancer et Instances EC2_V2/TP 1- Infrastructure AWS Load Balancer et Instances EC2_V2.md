@@ -208,7 +208,7 @@ Partie 3 : Création de la première instance EC2 et configuration des security 
 
    Les règles devront être les suivantes : 
 
-   ● SSH (port22) : Autorisez l'accès SSH depuis votre adresse IP publique (l’IP Ynov, pour connaitre votre IP Publique vous pouvez utiliser : ht[tps://ifconfig.me) ](https://ifconfig.me/)
+   ● SSH (port22) : Autorisez l'accès SSH depuis votre adresse IP publique (l’IP Ynov, pour connaitre votre IP Publique vous pouvez utiliser : [https://ifconfig.me) ](https://ifconfig.me/)
 
    ●HTTP (port 80) : Autorisez uniquement le trafic provenant du load balancer (sélectionnez le security group du load balancer comme source).
 
